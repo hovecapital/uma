@@ -31,8 +31,7 @@ export default {
     }),
     commonjs(),
     typescript({
-      tsconfig: './tsconfig.json',
-      exclude: ['**/*.test.ts', '**/*.test.tsx'],
+      tsconfig: './tsconfig.build.json',
     }),
   ],
 };

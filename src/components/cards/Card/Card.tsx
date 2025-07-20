@@ -7,7 +7,7 @@ import { getSpacingValue } from '@/utils/spacing';
 export const Card: React.FC<CardProps> = ({
   children,
   variant = 'elevated',
-  size = 'md',
+  size: _size = 'md',
   padding = 'md',
   margin,
   borderRadius = 'md',

@@ -1,9 +1,6 @@
 import type { Theme, DeepPartial } from '@/types/theme.types';
 
-export const mergeTheme = (
-  baseTheme: Theme,
-  customTheme: DeepPartial<Theme>
-): Theme => {
+export const mergeTheme = (baseTheme: Theme, customTheme: DeepPartial<Theme>): Theme => {
   const merged = { ...baseTheme };
 
   const deepMerge = (target: Record<string, unknown>, source: Record<string, unknown>): void => {
@@ -13,10 +10,7 @@ export const mergeTheme = (
 
       if (sourceValue && typeof sourceValue === 'object' && !Array.isArray(sourceValue)) {
         if (targetValue && typeof targetValue === 'object' && !Array.isArray(targetValue)) {
-          deepMerge(
-            targetValue as Record<string, unknown>,
-            sourceValue as Record<string, unknown>
-          );
+          deepMerge(targetValue as Record<string, unknown>, sourceValue as Record<string, unknown>);
         } else {
           target[key] = sourceValue;
         }
@@ -27,6 +21,6 @@ export const mergeTheme = (
   };
 
   deepMerge(merged as unknown as Record<string, unknown>, customTheme as Record<string, unknown>);
-  
+
   return merged;
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 import type { ChatAvatarProps } from '@/types/component.types';
-import type { ImageStyle, ViewStyle } from 'react-native';
+import type { ViewStyle } from 'react-native';
 import { useTheme } from '@/theme/ThemeProvider';
 
 export const ChatAvatar: React.FC<ChatAvatarProps> = ({
@@ -22,7 +22,7 @@ export const ChatAvatar: React.FC<ChatAvatarProps> = ({
   const getInitials = (displayName: string): string => {
     return displayName
       .split(' ')
-      .map(word => word.charAt(0))
+      .map((word) => word.charAt(0))
       .join('')
       .toUpperCase()
       .slice(0, 2);
@@ -50,10 +50,7 @@ export const ChatAvatar: React.FC<ChatAvatarProps> = ({
     );
   }
 
-  const viewStyles: ViewStyle[] = [
-    baseStyles,
-    style as ViewStyle,
-  ].filter(Boolean);
+  const viewStyles: ViewStyle[] = [baseStyles, style as ViewStyle].filter(Boolean);
 
   if (name) {
     return (

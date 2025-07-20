@@ -15,7 +15,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
   onLongPress,
   renderCustomContent,
   variant = 'bubble',
-  colorScheme = 'primary',
+  colorScheme: _colorScheme = 'primary',
   style,
   textStyle,
   containerStyle,
@@ -71,7 +71,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
     timestampStyle,
   ];
 
-  const renderAvatar = () => {
+  const renderAvatar = (): React.ReactNode => {
     if (!showAvatar || !avatar) return null;
 
     if (React.isValidElement(avatar)) {
@@ -89,7 +89,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
     return null;
   };
 
-  const renderContent = () => {
+  const renderContent = (): React.ReactNode => {
     if (renderCustomContent) {
       return renderCustomContent();
     }

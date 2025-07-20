@@ -7,7 +7,7 @@ import { HStack } from '@/components/layout/HStack/HStack';
 export const Button: React.FC<ButtonProps> = ({
   children,
   variant = 'solid',
-  colorScheme = 'primary',
+  colorScheme: _colorScheme = 'primary',
   size = 'md',
   isLoading = false,
   isDisabled = false,
@@ -53,24 +53,15 @@ export const Button: React.FC<ButtonProps> = ({
     textStyle,
   ];
 
-  const renderContent = () => {
+  const renderContent = (): React.ReactNode => {
     if (isLoading) {
-      return (
-        <ActivityIndicator
-          size="small"
-          color={variantStyles.text.color as string}
-        />
-      );
+      return <ActivityIndicator size="small" color={variantStyles.text.color as string} />;
     }
 
     const content = (
       <>
         {leftIcon && <View style={{ marginRight: 8 }}>{leftIcon}</View>}
-        {typeof children === 'string' ? (
-          <Text style={textStyles}>{children}</Text>
-        ) : (
-          children
-        )}
+        {typeof children === 'string' ? <Text style={textStyles}>{children}</Text> : children}
         {rightIcon && <View style={{ marginLeft: 8 }}>{rightIcon}</View>}
       </>
     );

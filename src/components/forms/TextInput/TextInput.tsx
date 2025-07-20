@@ -48,17 +48,17 @@ export const TextInput: React.FC<TextInputProps> = ({
     hasError: !!errorMessage,
   });
 
-  const handleFocus = () => {
+  const handleFocus = (): void => {
     setIsFocused(true);
     onFocus?.();
   };
 
-  const handleBlur = () => {
+  const handleBlur = (): void => {
     setIsFocused(false);
     onBlur?.();
   };
 
-  const handleContainerPress = () => {
+  const handleContainerPress = (): void => {
     inputRef.current?.focus();
   };
 
@@ -90,7 +90,7 @@ export const TextInput: React.FC<TextInputProps> = ({
         {leftElement && <View style={{ marginRight: theme.spacing.sm }}>{leftElement}</View>}
 
         <RNTextInput
-          ref={inputRef} 
+          ref={inputRef}
           value={value}
           onChangeText={onChangeText}
           placeholder={placeholder}

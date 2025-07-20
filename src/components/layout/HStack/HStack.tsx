@@ -44,11 +44,7 @@ export const HStack: React.FC<HStackProps> = ({
       {childrenArray.map((child, index) => (
         <View
           key={index}
-          style={
-            index < childrenArray.length - 1
-              ? { marginRight: spacingValue }
-              : undefined
-          }
+          style={index < childrenArray.length - 1 ? { marginRight: spacingValue } : undefined}
         >
           {child}
         </View>

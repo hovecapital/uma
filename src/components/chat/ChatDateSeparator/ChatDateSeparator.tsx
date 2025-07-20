@@ -22,16 +22,16 @@ export const ChatDateSeparator: React.FC<ChatDateSeparatorProps> = ({
     if (messageDate.toDateString() === today.toDateString()) {
       return 'Today';
     }
-    
+
     if (messageDate.toDateString() === yesterday.toDateString()) {
       return 'Yesterday';
     }
 
     if (format) {
-      return messageDate.toLocaleDateString(undefined, { 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric' 
+      return messageDate.toLocaleDateString(undefined, {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
       });
     }
 
@@ -61,7 +61,7 @@ export const ChatDateSeparator: React.FC<ChatDateSeparatorProps> = ({
           lineStyle,
         ]}
       />
-      
+
       <Text
         style={[
           {
@@ -75,7 +75,7 @@ export const ChatDateSeparator: React.FC<ChatDateSeparatorProps> = ({
       >
         {formatDate(date)}
       </Text>
-      
+
       <View
         style={[
           {

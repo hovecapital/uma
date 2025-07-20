@@ -19,9 +19,9 @@ export const Modal: React.FC<ModalProps> = ({
   size = 'md',
   placement = 'center',
   closeOnOverlayClick = true,
-  showCloseButton = true,
+  showCloseButton: _showCloseButton = true,
   animationType = 'fade',
-  slideFrom = 'bottom',
+  slideFrom: _slideFrom = 'bottom',
   header,
   footer,
   scrollBehavior = 'inside',
@@ -35,7 +35,7 @@ export const Modal: React.FC<ModalProps> = ({
   onModalHide,
   backdropOpacity = 0.5,
   useNativeDriver = true,
-  style,
+  style: _style,
   ...rest
 }) => {
   const { theme } = useTheme();
@@ -60,7 +60,7 @@ export const Modal: React.FC<ModalProps> = ({
   const modalSize = theme.components.Modal.sizes[size];
   const backdropConfig = theme.components.Modal.backdrop;
 
-  const getPlacementStyles = () => {
+  const getPlacementStyles = (): { justifyContent: 'flex-start' | 'flex-end' | 'center' } => {
     switch (placement) {
       case 'top':
         return { justifyContent: 'flex-start' as const };
@@ -106,7 +106,7 @@ export const Modal: React.FC<ModalProps> = ({
     backdropStyle,
   ];
 
-  const renderHeader = () => {
+  const renderHeader = (): React.ReactNode => {
     if (!header) return null;
 
     const headerContent =
@@ -140,7 +140,7 @@ export const Modal: React.FC<ModalProps> = ({
     );
   };
 
-  const renderFooter = () => {
+  const renderFooter = (): React.ReactNode => {
     if (!footer) return null;
 
     return (
@@ -159,7 +159,7 @@ export const Modal: React.FC<ModalProps> = ({
     );
   };
 
-  const renderContent = () => {
+  const renderContent = (): React.ReactNode => {
     const content = (
       <>
         {renderHeader()}

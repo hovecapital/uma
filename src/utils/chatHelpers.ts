@@ -22,9 +22,9 @@ export const shouldShowAvatar = (
   userId: string
 ): boolean => {
   if (index === messages.length - 1) return true;
-  
+
   const nextMessage = messages[index + 1];
   if (!nextMessage) return true;
-  
+
   return nextMessage.userId !== userId;
 };

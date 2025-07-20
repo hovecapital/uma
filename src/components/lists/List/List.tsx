@@ -16,12 +16,12 @@ export function List<T>({
   onEndReachedThreshold = 0.5,
   horizontal = false,
   numColumns = 1,
-  columnWrapperStyle,
+  columnWrapperStyle: _columnWrapperStyle,
   contentContainerStyle,
   estimatedItemSize = 50,
   style,
   ...rest
-}: ListProps<T>) {
+}: ListProps<T>): React.ReactElement {
   return (
     <FlashList
       data={data}

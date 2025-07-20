@@ -1,0 +1,60 @@
+{
+  "name": "@hovecapital/uma",
+  "version": "1.0.0",
+  "description": "React Native Expo component library with theming support",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "jest",
+    "lint": "eslint src --ext .ts,.tsx",
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "expo": ">=48.0.0",
+    "react": ">=18.0.0",
+    "react-native": ">=0.71.0",
+    "@shopify/flash-list": "^1.6.0",
+    "react-native-reanimated": ">=3.0.0",
+    "react-native-gesture-handler": ">=2.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-native": "^0.71.0",
+    "typescript": "^5.0.0",
+    "rollup": "^3.0.0",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-commonjs": "^24.0.0",
+    "eslint": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "jest": "^29.0.0",
+    "@types/jest": "^29.0.0",
+    "ts-jest": "^29.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hovecapital/uma.git"
+  },
+  "keywords": [
+    "react-native",
+    "expo",
+    "components",
+    "ui",
+    "library",
+    "typescript"
+  ],
+  "author": "Hove Capital",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hovecapital/uma/issues"
+  },
+  "homepage": "https://github.com/hovecapital/uma#readme"
+}

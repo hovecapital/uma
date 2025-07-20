@@ -1,6 +1,6 @@
 {
   "name": "@hovecapital/uma",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "React Native Expo component library with theming support",
   "main": "dist/index.js",

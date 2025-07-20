@@ -47,7 +47,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
       backgroundColor: bubbleConfig.backgroundColor,
       borderRadius: theme.components.Chat.message.bubble.borderRadius,
       padding: messageSpacing.horizontal,
-      maxWidth: theme.components.Chat.message.bubble.maxWidth,
+      maxWidth: theme.components.Chat.message.bubble.maxWidth as any,
     },
     variant === 'text' && { backgroundColor: 'transparent', padding: 0 },
     bubbleStyle,
@@ -119,7 +119,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
     <View style={containerStyles}>
       {!isOwn && renderAvatar()}
       {!isOwn && showAvatar && <View style={{ width: theme.spacing.sm }} />}
-      
+
       <TouchableOpacity
         style={[bubbleStyles, style]}
         onPress={onPress}

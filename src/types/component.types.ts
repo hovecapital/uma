@@ -1,12 +1,15 @@
 import type {
   ViewStyle,
   TextStyle,
+  ImageStyle,
   KeyboardTypeOptions,
   ImageSourcePropType,
   NativeSyntheticEvent,
   NativeScrollEvent,
+  AccessibilityRole,
 } from 'react-native';
-import type { ReactNode, ReactElement } from 'react';
+import type { ContentStyle } from '@shopify/flash-list';
+import type { ReactNode, ReactElement, ComponentType } from 'react';
 import type { Theme } from './theme.types';
 
 export type StyleProp<T> = T | T[] | undefined;
@@ -18,7 +21,7 @@ export type BaseComponentProps = {
   accessible?: boolean;
   accessibilityLabel?: string;
   accessibilityHint?: string;
-  accessibilityRole?: string;
+  accessibilityRole?: AccessibilityRole;
 };
 
 // Layout Components
@@ -80,7 +83,7 @@ export type ListProps<T> = BaseComponentProps & {
   data: T[];
   renderItem: (item: T, index: number) => ReactElement;
   keyExtractor: (item: T, index: number) => string;
-  ItemSeparatorComponent?: ReactElement | (() => ReactElement);
+  ItemSeparatorComponent?: ComponentType<any> | null;
   ListHeaderComponent?: ReactElement | (() => ReactElement);
   ListFooterComponent?: ReactElement | (() => ReactElement);
   ListEmptyComponent?: ReactElement | (() => ReactElement);
@@ -91,7 +94,7 @@ export type ListProps<T> = BaseComponentProps & {
   horizontal?: boolean;
   numColumns?: number;
   columnWrapperStyle?: StyleProp<ViewStyle>;
-  contentContainerStyle?: StyleProp<ViewStyle>;
+  contentContainerStyle?: ContentStyle;
   estimatedItemSize?: number;
 };
 
@@ -235,16 +238,17 @@ export type ChatMessageListProps = BaseComponentProps & {
   groupMessages?: boolean;
   showDateSeparators?: boolean;
   dateFormat?: string;
-  contentContainerStyle?: StyleProp<ViewStyle>;
+  contentContainerStyle?: ContentStyle;
 };
 
-export type ChatAvatarProps = BaseComponentProps & {
+export type ChatAvatarProps = Omit<BaseComponentProps, 'style'> & {
   source?: ImageSourcePropType;
   name?: string;
   size?: 'xs' | 'sm' | 'md' | 'lg';
   borderRadius?: keyof Theme['borderRadius'];
   backgroundColor?: string;
   textColor?: string;
+  style?: StyleProp<ViewStyle | ImageStyle>;
 };
 
 export type ChatDateSeparatorProps = BaseComponentProps & {

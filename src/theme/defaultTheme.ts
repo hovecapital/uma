@@ -269,12 +269,12 @@ export const defaultTheme: Theme = {
     },
     Modal: {
       sizes: {
-        xs: { width: '70%' },
-        sm: { width: '80%' },
-        md: { width: '90%' },
-        lg: { width: '95%' },
-        xl: { width: '98%' },
-        full: { width: '100%', height: '100%' },
+        xs: { width: '70%' as const },
+        sm: { width: '80%' as const },
+        md: { width: '90%' as const },
+        lg: { width: '95%' as const },
+        xl: { width: '98%' as const },
+        full: { width: '100%' as const, height: '100%' as const },
       },
       backdrop: {
         opacity: 0.5,

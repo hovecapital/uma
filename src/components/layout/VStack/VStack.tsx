@@ -42,11 +42,7 @@ export const VStack: React.FC<VStackProps> = ({
       {childrenArray.map((child, index) => (
         <View
           key={index}
-          style={
-            index < childrenArray.length - 1
-              ? { marginBottom: spacingValue }
-              : undefined
-          }
+          style={index < childrenArray.length - 1 ? { marginBottom: spacingValue } : undefined}
         >
           {child}
         </View>

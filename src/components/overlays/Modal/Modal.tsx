@@ -63,11 +63,11 @@ export const Modal: React.FC<ModalProps> = ({
   const getPlacementStyles = () => {
     switch (placement) {
       case 'top':
-        return { justifyContent: 'flex-start' };
+        return { justifyContent: 'flex-start' as const };
       case 'bottom':
-        return { justifyContent: 'flex-end' };
+        return { justifyContent: 'flex-end' as const };
       default:
-        return { justifyContent: 'center' };
+        return { justifyContent: 'center' as const };
     }
   };
 
@@ -84,12 +84,12 @@ export const Modal: React.FC<ModalProps> = ({
     {
       backgroundColor: theme.colors.background.primary,
       borderRadius: theme.borderRadius.lg,
-      maxHeight: '90%',
-      ...modalSize,
+      maxHeight: '90%' as const,
+      ...(modalSize as any), // Allow theme sizes to work with DimensionValue
     },
     size === 'full' && {
       borderRadius: 0,
-      maxHeight: '100%',
+      maxHeight: '100%' as const,
     },
     contentStyle,
   ];

@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 import type { ChatAvatarProps } from '@/types/component.types';
+import type { ImageStyle, ViewStyle } from 'react-native';
 import { useTheme } from '@/theme/ThemeProvider';
 
 export const ChatAvatar: React.FC<ChatAvatarProps> = ({
@@ -27,31 +28,36 @@ export const ChatAvatar: React.FC<ChatAvatarProps> = ({
       .slice(0, 2);
   };
 
-  const avatarStyles = [
-    {
-      width: sizeValue,
-      height: sizeValue,
-      borderRadius: radiusValue,
-      backgroundColor: backgroundColor || theme.colors.neutral[300],
-      alignItems: 'center' as const,
-      justifyContent: 'center' as const,
-    },
-    style,
-  ];
+  const baseStyles = {
+    width: sizeValue,
+    height: sizeValue,
+    borderRadius: radiusValue,
+    backgroundColor: backgroundColor || theme.colors.neutral[300],
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+  };
 
   if (source) {
     return (
       <Image
         source={source}
-        style={avatarStyles}
+        style={[
+          baseStyles,
+          style as any, // Allow the union type for style flexibility
+        ]}
         {...rest}
       />
     );
   }
 
+  const viewStyles: ViewStyle[] = [
+    baseStyles,
+    style as ViewStyle,
+  ].filter(Boolean);
+
   if (name) {
     return (
-      <View style={avatarStyles} {...rest}>
+      <View style={viewStyles} {...rest}>
         <Text
           style={{
             fontSize: sizeValue * 0.4,
@@ -65,5 +71,5 @@ export const ChatAvatar: React.FC<ChatAvatarProps> = ({
     );
   }
 
-  return <View style={avatarStyles} {...rest} />;
+  return <View style={viewStyles} {...rest} />;
 };

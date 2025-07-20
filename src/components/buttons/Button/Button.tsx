@@ -38,7 +38,7 @@ export const Button: React.FC<ButtonProps> = ({
       alignItems: 'center' as const,
       justifyContent: 'center' as const,
     },
-    fullWidth && { width: '100%' },
+    fullWidth && { width: '100%' as const },
     isDisabled && variantStyles.disabled?.container,
     style,
   ];

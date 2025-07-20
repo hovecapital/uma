@@ -43,17 +43,23 @@ export const Card: React.FC<CardProps> = ({
     style,
   ];
 
-  const Container = onPress || onLongPress ? TouchableOpacity : View;
+  if (onPress || onLongPress) {
+    return (
+      <TouchableOpacity
+        style={cardStyles}
+        onPress={onPress}
+        onLongPress={onLongPress}
+        activeOpacity={activeOpacity}
+        {...rest}
+      >
+        {children}
+      </TouchableOpacity>
+    );
+  }
 
   return (
-    <Container
-      style={cardStyles}
-      onPress={onPress}
-      onLongPress={onLongPress}
-      activeOpacity={activeOpacity}
-      {...rest}
-    >
+    <View style={cardStyles} {...rest}>
       {children}
-    </Container>
+    </View>
   );
 };

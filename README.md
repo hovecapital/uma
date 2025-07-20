@@ -17,6 +17,7 @@ npm install react@^18.2.0 react-native@^0.72.0 @shopify/flash-list@^1.6.0
 ```
 
 Optional dependencies for enhanced functionality:
+
 ```bash
 npm install expo react-native-reanimated react-native-gesture-handler
 ```

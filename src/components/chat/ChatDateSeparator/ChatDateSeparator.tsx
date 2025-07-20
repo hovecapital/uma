@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import type { ChatDateSeparatorProps } from '../../../types/component.types';
-import { useTheme } from '../../../theme/ThemeProvider';
+import type { ChatDateSeparatorProps } from '@/types/component.types';
+import { useTheme } from '@/theme/ThemeProvider';
 
 export const ChatDateSeparator: React.FC<ChatDateSeparatorProps> = ({
   date,

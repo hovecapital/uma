@@ -10,11 +10,26 @@ npm install @hovecapital/uma
 
 ### Peer Dependencies
 
-Make sure you have the following peer dependencies installed:
+This library requires the following peer dependencies:
 
 ```bash
-npm install expo react react-native @shopify/flash-list react-native-reanimated react-native-gesture-handler
+npm install react@^18.2.0 react-native@^0.72.0 @shopify/flash-list@^1.6.0
 ```
+
+Optional dependencies for enhanced functionality:
+```bash
+npm install expo react-native-reanimated react-native-gesture-handler
+```
+
+### Requirements
+
+This library is designed to work with:
+
+- **React**: 18.2.x or higher
+- **React Native**: 0.72.x or higher  
+- **FlashList**: 1.6.x or higher
+- **Node.js**: 16.x or higher
+- **Expo**: 48.x or higher (optional)
 
 ## Quick Start
 
@@ -62,6 +77,7 @@ export default App;
 ### Layout Components
 
 #### VStack
+
 Vertically stacks children with consistent spacing.
 
 ```tsx
@@ -75,6 +91,7 @@ import { VStack, Text } from '@hovecapital/uma';
 ```
 
 #### HStack
+
 Horizontally stacks children with consistent spacing.
 
 ```tsx
@@ -89,6 +106,7 @@ import { HStack, Button } from '@hovecapital/uma';
 ### Form Components
 
 #### TextInput
+
 Feature-rich input component with validation support.
 
 ```tsx
@@ -108,6 +126,7 @@ import { TextInput } from '@hovecapital/uma';
 ```
 
 #### Button
+
 Customizable button with multiple variants and sizes.
 
 ```tsx
@@ -129,6 +148,7 @@ import { Button } from '@hovecapital/uma';
 ### Display Components
 
 #### Card
+
 Flexible card container with multiple variants.
 
 ```tsx
@@ -143,6 +163,7 @@ import { Card, VStack, Text } from '@hovecapital/uma';
 ```
 
 #### List
+
 High-performance list component powered by FlashList.
 
 ```tsx
@@ -164,6 +185,7 @@ import { List } from '@hovecapital/uma';
 ### Overlay Components
 
 #### Modal
+
 Feature-rich modal with multiple configurations.
 
 ```tsx
@@ -192,6 +214,7 @@ import { Modal, VStack, Button, Text } from '@hovecapital/uma';
 ### Chat Components
 
 #### ChatMessage
+
 Individual chat message component.
 
 ```tsx
@@ -212,6 +235,7 @@ import { ChatMessage } from '@hovecapital/uma';
 ```
 
 #### ChatMessageList
+
 Optimized list for chat messages.
 
 ```tsx

@@ -1,8 +1,8 @@
 import React, { createContext, useContext, useMemo, useState } from 'react';
 import type { ReactNode } from 'react';
-import type { Theme, DeepPartial } from '../types/theme.types';
+import type { Theme, DeepPartial } from '@/types/theme.types';
 import { defaultTheme } from './defaultTheme';
-import { mergeTheme } from '../utils/mergeTheme';
+import { mergeTheme } from '@/utils/mergeTheme';
 
 type ThemeContextType = {
   theme: Theme;

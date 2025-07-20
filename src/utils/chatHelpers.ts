@@ -1,4 +1,4 @@
-import type { ChatMessageData } from '../types/component.types';
+import type { ChatMessageData } from '@/types/component.types';
 
 export const groupMessagesByDate = (
   messages: ChatMessageData[]

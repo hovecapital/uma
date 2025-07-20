@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import type { ChatMessageProps } from '../../../types/component.types';
-import { useTheme } from '../../../theme/ThemeProvider';
-import { formatTimestamp } from '../../../utils/dateFormatting';
-import { ChatAvatar } from '../ChatAvatar/ChatAvatar';
+import type { ChatMessageProps } from '@/types/component.types';
+import { useTheme } from '@/theme/ThemeProvider';
+import { formatTimestamp } from '@/utils/dateFormatting';
+import { ChatAvatar } from '@/components/chat/ChatAvatar/ChatAvatar';
 
 export const ChatMessage: React.FC<ChatMessageProps> = ({
   message,

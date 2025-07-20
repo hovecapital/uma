@@ -1,8 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
-import type { HStackProps } from '../../../types/component.types';
-import { useTheme } from '../../../theme/ThemeProvider';
-import { getSpacingValue } from '../../../utils/spacing';
+import type { HStackProps } from '@/types/component.types';
+import { useTheme } from '@/theme/ThemeProvider';
+import { getSpacingValue } from '@/utils/spacing';
 
 export const HStack: React.FC<HStackProps> = ({
   children,

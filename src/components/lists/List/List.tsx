@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlashList } from '@shopify/flash-list';
-import type { ListProps } from '../../../types/component.types';
+import type { ListProps } from '@/types/component.types';
 
 export function List<T>({
   data,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
-import type { ChatAvatarProps } from '../../../types/component.types';
-import { useTheme } from '../../../theme/ThemeProvider';
+import type { ChatAvatarProps } from '@/types/component.types';
+import { useTheme } from '@/theme/ThemeProvider';
 
 export const ChatAvatar: React.FC<ChatAvatarProps> = ({
   source,

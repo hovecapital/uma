@@ -1,4 +1,4 @@
-import type { Theme } from '../types/theme.types';
+import type { Theme } from '@/types/theme.types';
 import type { ViewStyle, TextStyle } from 'react-native';
 
 type GetInputStylesParams = {
@@ -49,7 +49,7 @@ export const getInputStyles = ({
       borderColor: hasError
         ? theme.colors.error[500]
         : isFocused
-        ? theme.colors[colorScheme][500]
+        ? (theme.colors[colorScheme] as any)[500]
         : theme.colors.neutral[300],
       backgroundColor: isDisabled
         ? theme.colors.neutral[100]
@@ -68,7 +68,7 @@ export const getInputStyles = ({
       borderBottomColor: hasError
         ? theme.colors.error[500]
         : isFocused
-        ? theme.colors[colorScheme][500]
+        ? (theme.colors[colorScheme] as any)[500]
         : theme.colors.neutral[300],
       paddingHorizontal: 0,
     },

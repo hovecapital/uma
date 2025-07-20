@@ -1,13 +1,8 @@
 import React, { useRef } from 'react';
-import {
-  View,
-  Text,
-  TextInput as RNTextInput,
-  TouchableOpacity,
-} from 'react-native';
-import type { TextInputProps } from '../../../types/component.types';
-import { useTheme } from '../../../theme/ThemeProvider';
-import { getInputStyles } from '../../../utils/inputStyles';
+import { View, Text, TextInput as RNTextInput, TouchableOpacity } from 'react-native';
+import type { TextInputProps } from '@/types/component.types';
+import { useTheme } from '@/theme/ThemeProvider';
+import { getInputStyles } from '@/utils/inputStyles';
 
 export const TextInput: React.FC<TextInputProps> = ({
   label,
@@ -92,12 +87,10 @@ export const TextInput: React.FC<TextInputProps> = ({
         style={[inputStyles.container, style]}
         disabled={isDisabled || isReadOnly}
       >
-        {leftElement && (
-          <View style={{ marginRight: theme.spacing.sm }}>{leftElement}</View>
-        )}
+        {leftElement && <View style={{ marginRight: theme.spacing.sm }}>{leftElement}</View>}
 
         <RNTextInput
-          ref={inputRef}
+          ref={inputRef} 
           value={value}
           onChangeText={onChangeText}
           placeholder={placeholder}
@@ -112,17 +105,11 @@ export const TextInput: React.FC<TextInputProps> = ({
           editable={!isDisabled && !isReadOnly}
           onFocus={handleFocus}
           onBlur={handleBlur}
-          style={[
-            inputStyles.input,
-            { flex: 1 },
-            textStyle,
-          ]}
+          style={[inputStyles.input, { flex: 1 }, textStyle]}
           {...rest}
         />
 
-        {rightElement && (
-          <View style={{ marginLeft: theme.spacing.sm }}>{rightElement}</View>
-        )}
+        {rightElement && <View style={{ marginLeft: theme.spacing.sm }}>{rightElement}</View>}
       </TouchableOpacity>
 
       {helperText && !errorMessage && (

@@ -1,8 +1,8 @@
 import React from 'react';
 import { TouchableOpacity, Text, ActivityIndicator, View } from 'react-native';
-import type { ButtonProps } from '../../../types/component.types';
-import { useTheme } from '../../../theme/ThemeProvider';
-import { HStack } from '../../layout/HStack/HStack';
+import type { ButtonProps } from '@/types/component.types';
+import { useTheme } from '@/theme/ThemeProvider';
+import { HStack } from '@/components/layout/HStack/HStack';
 
 export const Button: React.FC<ButtonProps> = ({
   children,

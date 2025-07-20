@@ -1,8 +1,8 @@
 import React from 'react';
 import { TouchableOpacity, View } from 'react-native';
-import type { CardProps } from '../../../types/component.types';
-import { useTheme } from '../../../theme/ThemeProvider';
-import { getSpacingValue } from '../../../utils/spacing';
+import type { CardProps } from '@/types/component.types';
+import { useTheme } from '@/theme/ThemeProvider';
+import { getSpacingValue } from '@/utils/spacing';
 
 export const Card: React.FC<CardProps> = ({
   children,

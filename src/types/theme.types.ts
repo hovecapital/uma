@@ -1,4 +1,4 @@
-import type { TextStyle, ViewStyle, ImageStyle } from 'react-native';
+import type { TextStyle, ViewStyle } from 'react-native';
 
 export type ColorScale = {
   50: string;

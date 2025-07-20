@@ -1,11 +1,10 @@
-import type { 
-  ViewStyle, 
-  TextStyle, 
-  ImageStyle, 
+import type {
+  ViewStyle,
+  TextStyle,
   KeyboardTypeOptions,
   ImageSourcePropType,
   NativeSyntheticEvent,
-  NativeScrollEvent
+  NativeScrollEvent,
 } from 'react-native';
 import type { ReactNode, ReactElement } from 'react';
 import type { Theme } from './theme.types';
@@ -27,7 +26,13 @@ export type VStackProps = BaseComponentProps & {
   children: ReactNode;
   spacing?: keyof Theme['spacing'] | number;
   align?: 'flex-start' | 'center' | 'flex-end' | 'stretch';
-  justify?: 'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly';
+  justify?:
+    | 'flex-start'
+    | 'center'
+    | 'flex-end'
+    | 'space-between'
+    | 'space-around'
+    | 'space-evenly';
   padding?: keyof Theme['spacing'] | number;
   margin?: keyof Theme['spacing'] | number;
   backgroundColor?: string;
@@ -38,7 +43,13 @@ export type HStackProps = BaseComponentProps & {
   children: ReactNode;
   spacing?: keyof Theme['spacing'] | number;
   align?: 'flex-start' | 'center' | 'flex-end' | 'stretch';
-  justify?: 'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly';
+  justify?:
+    | 'flex-start'
+    | 'center'
+    | 'flex-end'
+    | 'space-between'
+    | 'space-around'
+    | 'space-evenly';
   padding?: keyof Theme['spacing'] | number;
   margin?: keyof Theme['spacing'] | number;
   backgroundColor?: string;

@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react';
 import { FlashList } from '@shopify/flash-list';
-import type { ChatMessageListProps, ChatMessageData } from '../../../types/component.types';
-import { ChatMessage } from '../ChatMessage/ChatMessage';
-import { ChatDateSeparator } from '../ChatDateSeparator/ChatDateSeparator';
-import { useTheme } from '../../../theme/ThemeProvider';
-import { groupMessagesByDate, shouldShowAvatar } from '../../../utils/chatHelpers';
+import type { ChatMessageListProps, ChatMessageData } from '@/types/component.types';
+import { ChatMessage } from '@/components/chat/ChatMessage/ChatMessage';
+import { ChatDateSeparator } from '@/components/chat/ChatDateSeparator/ChatDateSeparator';
+import { useTheme } from '@/theme/ThemeProvider';
+import { groupMessagesByDate, shouldShowAvatar } from '@/utils/chatHelpers';
 
 export const ChatMessageList: React.FC<ChatMessageListProps> = ({
   messages,

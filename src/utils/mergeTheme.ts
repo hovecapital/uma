@@ -1,4 +1,4 @@
-import type { Theme, DeepPartial } from '../types/theme.types';
+import type { Theme, DeepPartial } from '@/types/theme.types';
 
 export const mergeTheme = (
   baseTheme: Theme,

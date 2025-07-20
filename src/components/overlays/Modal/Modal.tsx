@@ -9,8 +9,8 @@ import {
   Animated,
   Text,
 } from 'react-native';
-import type { ModalProps } from '../../../types/component.types';
-import { useTheme } from '../../../theme/ThemeProvider';
+import type { ModalProps } from '@/types/component.types';
+import { useTheme } from '@/theme/ThemeProvider';
 
 export const Modal: React.FC<ModalProps> = ({
   isOpen,
@@ -109,19 +109,20 @@ export const Modal: React.FC<ModalProps> = ({
   const renderHeader = () => {
     if (!header) return null;
 
-    const headerContent = typeof header === 'string' ? (
-      <Text
-        style={{
-          fontSize: theme.typography.fontSize.lg,
-          fontFamily: theme.typography.fontFamily.semibold,
-          color: theme.colors.text.primary,
-        }}
-      >
-        {header}
-      </Text>
-    ) : (
-      header
-    );
+    const headerContent =
+      typeof header === 'string' ? (
+        <Text
+          style={{
+            fontSize: theme.typography.fontSize.lg,
+            fontFamily: theme.typography.fontFamily.semibold,
+            color: theme.colors.text.primary,
+          }}
+        >
+          {header}
+        </Text>
+      ) : (
+        header
+      );
 
     return (
       <View
@@ -208,17 +209,16 @@ export const Modal: React.FC<ModalProps> = ({
       onRequestClose={onClose}
       {...rest}
     >
-      <Container
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-        style={{ flex: 1 }}
-      >
+      <Container behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={{ flex: 1 }}>
         <Animated.View
           style={[
             backdropStyles,
-            { opacity: fadeAnim.interpolate({
-              inputRange: [0, 1],
-              outputRange: [0, backdropOpacity],
-            }) },
+            {
+              opacity: fadeAnim.interpolate({
+                inputRange: [0, 1],
+                outputRange: [0, backdropOpacity],
+              }),
+            },
           ]}
         >
           <TouchableOpacity
